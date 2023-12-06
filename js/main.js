@@ -13,7 +13,7 @@ const lodingClear = () => {
         // ページの読み込みが完了したら実行
         document.addEventListener("DOMContentLoaded", function () {
             // video要素を取得
-            var video = document.getElementById("myVideo");
+            var video = document.getElementById("video");
 
             // Safariの場合、動画の再生を開始するにはユーザーの操作が必要
             // そのため、ユーザーの操作で再生するためのイベントリスナーを追加
