@@ -10,7 +10,26 @@ const lodingClear = () => {
     snipper.classList.add('loaded')
 }
 
+        // ページの読み込みが完了したら実行
+        document.addEventListener("DOMContentLoaded", function () {
+            // video要素を取得
+            var video = document.getElementById("myVideo");
 
+            // Safariの場合、動画の再生を開始するにはユーザーの操作が必要
+            // そのため、ユーザーの操作で再生するためのイベントリスナーを追加
+            video.addEventListener("click", function () {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+
+            // Safariであれば、ユーザーアクション後に再生を試みる
+            document.addEventListener("click", function () {
+                video.play();
+            });
+        });
 
 // メニュー
 $('#target').click(() => {
